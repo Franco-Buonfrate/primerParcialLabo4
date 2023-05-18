@@ -13,12 +13,12 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { AltaComponent } from './componentes/AltaRepartidor/alta/alta.component';
-import { TablaPaisesComponent } from './componentes/AltaRepartidor/tabla-paises/tabla-paises.component';
+import { AltaComponent } from './componentes/AltaProducto/alta/alta.component';
+import { TablaPaisesComponent } from './componentes/AltaProducto/tabla-paises/tabla-paises.component';
 import { MainComponent } from './componentes/datalle/main/main.component';
 import { ListadoComponent } from './componentes/datalle/listado/listado.component';
-import { DatalleRepartidorComponent } from './componentes/datalle/datalle-repartidor/datalle-repartidor.component';
 import { DatallePaisComponent } from './componentes/datalle/datalle-pais/datalle-pais.component';
+import { DatalleProductoComponent } from './componentes/datalle/datalle-producto/datalle-producto.component';
 
 
 @NgModule({
@@ -30,8 +30,8 @@ import { DatallePaisComponent } from './componentes/datalle/datalle-pais/datalle
     TablaPaisesComponent,
     MainComponent,
     ListadoComponent,
-    DatalleRepartidorComponent,
-    DatallePaisComponent
+    DatallePaisComponent,
+    DatalleProductoComponent
   ],
   imports: [
     BrowserModule,

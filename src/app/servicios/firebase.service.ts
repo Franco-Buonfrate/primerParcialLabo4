@@ -13,11 +13,11 @@ export class FirebaseService {
   private tokenSubject: BehaviorSubject<string>;
   private collection : CollectionReference;
   public observable : Observable<any[]>;
-  
+
   constructor(private firestore :Firestore)
   {
     this.tokenSubject = new BehaviorSubject<string>('');
-    this.collection = collection(this.firestore, 'repartidores');
+    this.collection = collection(this.firestore, 'productos');
     this.observable = this.traer();
   }
 

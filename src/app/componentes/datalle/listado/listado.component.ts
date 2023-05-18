@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Repartidor } from 'src/app/clases/repartidor';
+import { Producto } from 'src/app/clases/producto';
 import { FirebaseService } from 'src/app/servicios/firebase.service';
 
 
@@ -9,23 +9,24 @@ import { FirebaseService } from 'src/app/servicios/firebase.service';
   styleUrls: ['./listado.component.css']
 })
 export class ListadoComponent implements OnInit {
-  repartidores!:Repartidor[];
-  @Output() repartidorSeleccionado = new EventEmitter<Repartidor>()
+  productos!:Producto[];
+  @Output() productoSeleccionado = new EventEmitter<Producto>()
   constructor(private firestore:FirebaseService)
   {
 
   }
 
   ngOnInit(): void {
-    this.firestore.traer().subscribe((repartidores: any[]) => {
-      this.repartidores = repartidores.map((rep: any) => {
-        return new Repartidor(rep.apellido, rep.nombre, rep.dni, rep.fechaNac, rep.pais, rep.capacidad, rep.objetoPais);
+    this.firestore.traer().subscribe((productos: any[]) => {
+      this.productos = productos.map((rep: any) => {
+        return new Producto(rep.descripcion, rep.codigo,
+          rep.precio, rep.stock, rep.pais, rep.comestible, rep.objetoPais);
       });
     });
   }
 
-  enviarRepartidor(repartidor:Repartidor)
+  enviarProducto(productos:Producto)
   {
-    this.repartidorSeleccionado.emit(repartidor);
+    this.productoSeleccionado.emit(productos);
   }
 }

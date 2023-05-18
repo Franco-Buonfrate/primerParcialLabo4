@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Repartidor } from 'src/app/clases/repartidor';
+import { Producto } from 'src/app/clases/producto';
 
 @Component({
   selector: 'app-main',
@@ -7,10 +7,10 @@ import { Repartidor } from 'src/app/clases/repartidor';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent {
-  repartidorRecibido!:Repartidor
+  productoRecibido!:Producto
 
-  recibirRepartidor($repartidor : Repartidor)
+  recibirProducto($producto : Producto)
   {
-    this.repartidorRecibido = $repartidor;
+    this.productoRecibido = $producto;
   }
 }

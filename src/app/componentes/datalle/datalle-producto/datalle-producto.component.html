@@ -1,0 +1,16 @@
+<ng-container  *ngIf="productoAMostrar; else noProducto">
+  <form>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 style="color:black" class="card-title">{{ productoAMostrar.decripcion }}</h5>
+        <p style="color:black" class="card-text">{{ productoAMostrar.codigo }}</p>
+        <h6 class="card-subtitle mb-2 text-muted">{{ productoAMostrar.precio }}</h6>
+        <p style="color:black" class="card-text">{{ productoAMostrar.pais }}</p>
+      </div>
+    </div>
+  </form>
+</ng-container>
+
+<ng-template #noProducto>
+  <p>No ha seleccionado un producto.</p>
+</ng-template>

@@ -1,21 +1,21 @@
 <div class="container py-4">
     <div class="p-5 mb-4 bg-light rounded-3">
       <div class="container-fluid py-5">
-        <app-listado (repartidorSeleccionado)="recibirRepartidor($event)" ></app-listado>
+        <app-listado (productoSeleccionado)="recibirProducto($event)" ></app-listado>
       </div>
     </div>
 
     <div class="row align-items-md-stretch">
       <div class="col-md-6">
         <div class="h-100 p-5 text-white bg-dark rounded-3">
-          <app-datalle-repartidor [repartidoAMostrar]="repartidorRecibido"></app-datalle-repartidor>
+          <app-datalle-producto [productoAMostrar]="productoRecibido"></app-datalle-producto>
         </div>
       </div>
 
 
       <div class="col-md-6">
         <div class="h-100 p-5 bg-light border rounded-3">
-          <app-datalle-pais  [paisAMostrar]="repartidorRecibido?.objetoPais"></app-datalle-pais>
+          <app-datalle-pais  [paisAMostrar]="productoRecibido?.objetoPais"></app-datalle-pais>
         </div>
       </div>
     </div>

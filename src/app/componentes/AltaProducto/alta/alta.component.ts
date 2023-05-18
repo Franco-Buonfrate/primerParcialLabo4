@@ -18,17 +18,16 @@ export class AltaComponent {
   constructor(public fb:FormBuilder, private router:Router, private firestore:Firestore)
   {
     this.formularioAlta = this.fb.group({
-      nombre: new FormControl('', [Validators.required, this.spacesValidator]),
-      apellido: new FormControl('', [Validators.required, this.spacesValidator]),
-      fechaNac: new FormControl('', [Validators.required]),
-      dni: new FormControl('', [Validators.required, Validators.min(10000000), Validators.max(99999999) ,this.spacesValidator]),
-      capacidad: new FormControl('', [Validators.required]),
+      descripcion: new FormControl('', [Validators.required]),
+      codigo: new FormControl('', [Validators.required, Validators.min(0), Validators.max(99999999), this.spacesValidator]),
+      stock: new FormControl('', [Validators.required, Validators.min(0), Validators.max(99999999), this.spacesValidator]),
+      precio: new FormControl('', [Validators.required, Validators.min(0), Validators.max(99999999) ,this.spacesValidator]),
       pais: new FormControl('', [Validators.required]),
-      unidadPropia: new FormControl(false, [Validators.required]),
+      comestible: new FormControl(false, [Validators.required]),
       objetoPais: new FormControl(null, [Validators.required])
     });
   }
-
+/*
   get Nombre() {
     return this.formularioAlta.get('nombre') as FormControl;
   }
@@ -44,25 +43,26 @@ export class AltaComponent {
   get Capacidad() {
     return this.formularioAlta.get('capacidad') as FormControl;
   }
-  get Pais() {
-    return this.formularioAlta.get('pais') as FormControl;
-  }
   get UnidadPropia() {
     return this.formularioAlta.get('unidadPropia') as FormControl;
+  }
+  */
+  get Pais() {
+    return this.formularioAlta.get('pais') as FormControl;
   }
   get ObjetoPais() {
     return this.formularioAlta.get('objetoPais') as FormControl;
   }
-  
+
   private spacesValidator(control: AbstractControl): null | object {
     const nombre = control.value;
-  
+
     if (nombre && typeof nombre === 'string') {
       const spaces = nombre.includes(' ');
-    
+
       return spaces ? { containsSpaces: true } : null;
     }
-    
+
     return null;
   }
 
@@ -74,7 +74,7 @@ export class AltaComponent {
 
   submitForm() {
     if (this.formularioAlta.valid) {
-      const placeRef = collection(this.firestore, 'repartidores');
+      const placeRef = collection(this.firestore, 'productos');
       addDoc(placeRef, this.formularioAlta.value);
       this.formularioAlta.reset();
     } else {

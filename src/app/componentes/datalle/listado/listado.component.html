@@ -4,12 +4,11 @@
         <table class="table">
           <thead>
             <tr>
-              <th class="text-center">DNI</th>
-              <th>Nombre</th>
-              <th>Apellido</th>
-              <th>Capacidad</th>
+              <th class="text-center">codigo</th>
+              <th>decripcion</th>
+              <th>precio</th>
+              <th>stock</th>
               <th>Pais</th>
-              <th>Fecha de Nacimiento</th>
             </tr>
           </thead>
           <tbody class="table-body">
@@ -17,15 +16,14 @@
               class="cell-1"
               data-toggle="collapse"
               data-target="#demo"
-              *ngFor="let item of repartidores" 
-              (click)="enviarRepartidor(item)"
+              *ngFor="let item of productos"
+              (click)="enviarProducto(item)"
             >
-              <td class="text-center">{{ item.dni }}</td>
-              <td>{{ item.nombre }}</td>
-              <td>{{ item.apellido }}</td>
-              <td class="text-center">{{ item.capacidad }}</td>
+              <td class="text-center">{{ item.codigo }}</td>
+              <td>{{ item.decripcion }}</td>
+              <td>{{ item.precio }}</td>
+              <td class="text-center">{{ item.stock }}</td>
               <td>{{ item.pais }}</td>
-              <td class="text-center">{{ item.fechaNac }}</td>
               <td class="table-elipse" data-toggle="collapse" data-target="#demo">
                 <i class="fa fa-ellipsis-h text-black-50"></i>
               </td>
@@ -34,4 +32,4 @@
         </table>
       </div>
     </div>
-  </div>   
+  </div>

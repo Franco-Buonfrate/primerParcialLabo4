@@ -7,45 +7,40 @@
     </div>
 
     <div class="col-md-8 order-md-1">
-      <h4 class="mb-3">Alta repartidor</h4>
+      <h4 class="mb-3">Alta producto</h4>
       <form [formGroup]="formularioAlta" class="needs-validation" (ngSubmit)="submitForm()">
         <div class="row">
           <div class="col-md-6 mb-3">
-            <label>Nombre</label>
-            <input type="text" class="form-control" formControlName="nombre" >
+            <label>Decripcion</label>
+            <input type="text" class="form-control" formControlName="descripcion" >
           </div>
           <div class="col-md-6 mb-3">
-            <label>Apellido</label>
-            <input type="text" class="form-control" formControlName="apellido" >
+            <label>Codigo</label>
+            <input type="number" class="form-control" formControlName="codigo" >
           </div>
         </div>
 
         <div class="mb-3">
-          <label for="username">DNI</label>
+          <label for="username">Precio</label>
           <div class="input-group">
-            <input type="number" class="form-control" formControlName="dni" placeholder="12345678" >
+            <input type="number" class="form-control" formControlName="precio" placeholder="12345678" >
           </div>
         </div>
 
         <div class="mb-3">
-          <label>Fecha de Nacimiento</label>
-          <input type="date" class="form-control" formControlName="fechaNac" placeholder="DD/MM/AAAA">
+          <label>Stock</label>
+          <input type="number" class="form-control" formControlName="stock" placeholder="2">
         </div>
 
         <div class="mb-3">
-          <label>Capacidad de transporte <span class="text-muted">(Unidades de pizzas)</span></label>
-          <input type="number" class="form-control" formControlName="capacidad" placeholder="2" >
-        </div>
-
-        <div class="mb-3">
-          <label>Pais </label>
+          <label>Pais</label>
           <input type="text" class="form-control" formControlName="pais" [value]="paisForm" readonly>
         </div>
 
         <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input" formControlName="unidadPropia">
-          <label class="custom-control-label">Unidad Propia</label>
-        </div>       
+          <input type="checkbox" class="custom-control-input" formControlName="comestible">
+          <label class="custom-control-label">Comestible</label>
+        </div>
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit" [disabled]="formularioAlta.invalid">Continuar</button>
       </form>
