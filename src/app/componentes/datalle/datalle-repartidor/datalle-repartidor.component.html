@@ -1,0 +1,18 @@
+<ng-container *ngIf="repartidoAMostrar; else noRepartidor">
+  <form>
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 style="color:black" class="card-title">{{ repartidoAMostrar.nombre }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ repartidoAMostrar.apellido }}</h6>
+        <p style="color:black" class="card-text">{{ repartidoAMostrar.pais }}</p>
+        <p style="color:black" class="card-text">{{ repartidoAMostrar.dni }}</p>
+        <p style="color:black" class="card-text">{{ repartidoAMostrar.fechaNac }}</p>
+        <p style="color:black" class="card-text">{{ repartidoAMostrar.capacidad }}</p>
+      </div>
+    </div>
+  </form>
+</ng-container>
+
+<ng-template #noRepartidor>
+  <p>No ha seleccionado un repartidor.</p>
+</ng-template>

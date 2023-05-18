@@ -1,0 +1,30 @@
+
+
+<div class="d-flex justify-content-center row">
+    <div class="col-md-10">
+        <div class="rounded">
+            <div class="table-responsive table-borderless">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Pais</th>
+                            <th>Bandera</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body">
+                        <tr class="cell-1" data-toggle="collapse" data-target="#demo" *ngFor="let item of listaPaises" (click)="enviarPais(item)">
+                            <td class="text-center">{{ item.translations.spa.common }}</td>
+                            <td>
+                                <img  [src]="item.flags.png" alt="Flag" class="responsive-image" />
+                            </td>
+                            
+                            <td class="table-elipse" data-toggle="collapse" data-target="#demo"><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

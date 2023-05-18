@@ -1,0 +1,25 @@
+<div class="container">
+  <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+    <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+      <img src="{{ imagenUsuario }}" width="80" high="32" >
+      <span> {{ nombreUsuario }}</span>
+    </a>
+
+    <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+      <li><a href="#" class="nav-link px-2 link-secondary" routerLink="">Home</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark" routerLink="alta">Alta</a></li>
+      <li><a href="#" class="nav-link px-2 link-dark" routerLink="detalle">Detalle</a></li>
+    </ul>
+
+    <div class="col-md-3 text-end">
+      <ng-container *ngIf="estaLogueado; else showLoginButton">
+        <button type="button" class="btn btn-primary" routerLink="bienvenido" routerLink="" (click)="logOut()">LogOut</button>
+      </ng-container>
+      
+      <ng-template #showLoginButton>
+        <button type="button" class="btn btn-outline-primary me-2" routerLink="login">Login</button>
+      </ng-template>
+    </div>
+  </header>
+</div>
+<router-outlet></router-outlet>

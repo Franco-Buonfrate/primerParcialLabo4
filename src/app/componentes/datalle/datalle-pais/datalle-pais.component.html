@@ -1,0 +1,19 @@
+<ng-container *ngIf="paisAMostrar; else noRepartidor">
+    <form>
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{ paisAMostrar.flags.png }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{paisAMostrar.translations.spa.common}}</h5>
+              <p class="card-text">{{paisAMostrar.capital}}</p>
+              <p class="card-text">{{paisAMostrar.subregion}}</p>
+            </div>
+            <ul class="list-group list-group-flush" *ngFor="let idioma of getLanguages(paisAMostrar.languages)">
+              <li class="list-group-item">{{idioma}}</li>
+            </ul>
+          </div>
+    </form>
+  </ng-container>
+  
+  <ng-template #noRepartidor>
+    <p>No ha seleccionado un repartidor.</p>
+  </ng-template>

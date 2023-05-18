@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "primerparciallaboiv-d789e": {
+      "hosting": {
+        "primerParcial": [
+          "primerparciallaboiv-d789e"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "primerparciallaboiv-d789e"
+  }
+}

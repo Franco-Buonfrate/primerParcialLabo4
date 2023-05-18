@@ -1,0 +1,29 @@
+<form [formGroup]="formularioLogin" class="form-signin">
+    <img class="mb-4" src="../../assets/logo.png" alt="" width="120" height="57" style="margin-left: calc(50% - 55px)">
+    <h1 class="h3 mb-3 fw-normal" >Inicia sesion para continuar</h1>
+
+    <div class="form-floating">
+      <input 
+        type="text" 
+        class="form-control" 
+        placeholder="name@example.com"
+        formControlName="email" 
+      >
+      <label for="floatingInput">Direccion de correo</label>
+    </div>
+    <div class="form-floating">
+      <input 
+        type="password" 
+        class="form-control" 
+        placeholder="Password"
+        formControlName="password" 
+      >
+      <label for="floatingPassword">Constraseña</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary"  (click)="login()">Ingresar</button>
+    <p></p>
+    <button class="button-1" role="button" (click)="hardcode(0)">Admin</button>
+    <button class="button-1" role="button" (click)="hardcode(1)">Empleado</button>
+</form>
+  
